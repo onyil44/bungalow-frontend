@@ -51,14 +51,6 @@ Includes both the **public website** for guests and the **admin dashboard** for 
 | ----------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | ![Dashboard](./screenshots/admin-dashboard.png) | ![Bookings](./screenshots/admin-bookings.png) | ![Calendar](./screenshots/admin-calendar.png) |
 
-### 🎥 Demo GIFs
-
-- Public Booking Flow  
-  ![Demo Booking](./screenshots/demo-booking.gif)
-
-- Admin Booking Management  
-  ![Demo Admin](./screenshots/demo-admin.gif)
-
 ---
 
 ## 🛠️ Tech Stack
@@ -84,8 +76,9 @@ VITE_API_URL=http://localhost:4001/api/v1
 VITE_AUTH_URL=http://localhost:4001/api/v1/auth
 VITE_DEFAULT_TZ=Europe/Istanbul
 
+---
 
-▶️ Getting Started
+## ▶️ Getting Started
 
 # 1. Install dependencies
 npm install
@@ -100,8 +93,9 @@ npm run build
 # 4. Preview production build
 npm run preview
 
+---
 
-📂 Project Structure
+## 📂 Project Structure
 /src
   /app          # Providers, router, global styles
   /pages        # Route components (public + admin)
@@ -114,8 +108,9 @@ npm run preview
   /assets       # Images, icons, fonts
   main.jsx
 
+---
 
-📦 Build & Deploy
+## 📦 Build & Deploy
 
 Production build is generated in /dist
 
@@ -123,12 +118,15 @@ Serve behind Caddy/Nginx or deploy to static hosts like Netlify or Vercel
 
 Ensure VITE_API_URL points to your live backend API (e.g. https://api.bungalow.yourdomain.com)
 
-📜 License
+---
+
+## 📜 License
 
 This project is licensed under the MIT License
-.
 
-📌 Credits
+---
+
+## 📌 Credits
 
 This project was initially inspired by coursework from Jonas Schmedtmann.
 Most of the design, functionality, and further development were implemented by Onur Yılmaz.
