@@ -119,3 +119,10 @@ Ensure VITE_API_URL points to your backend API (e.g. https://api.bungalow.yourdo
 📜 License
 
 MIT (or your chosen license)
+
+📌 Credits / Acknowledgements
+
+This project was initially inspired by coursework from Jonas Schmedtmann
+.
+Some starter JSX structures were adapted from his training materials.
+The majority of the design, functionality, and further development were implemented by Onur Yılmaz.
