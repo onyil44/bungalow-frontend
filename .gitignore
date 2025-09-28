@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+out/
+.build/
+.cache/
+
+# Local dev files
+*.local
+.env
+.env.*.local
+
+# Vite / Parcel / Next / CRA caches
+.vite/
+.next/
+.parcel-cache/
+coverage/
+
+# Public assets generated at build time
+public/build/
+public/uploads/
+public/data/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Custom project-specific ignores
+src/pages/Restore.jsx
+src/services/booking.adapters_copy.js
+src/utils/config.js
+src/utils/countries.js
+src/utils/countryList.json
+
+# Optional config files (keep local only)
+.prettierrc
+eslint.config.js
+vite.config.js
+
