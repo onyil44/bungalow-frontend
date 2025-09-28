@@ -76,26 +76,35 @@ VITE_API_URL=http://localhost:4001/api/v1
 VITE_AUTH_URL=http://localhost:4001/api/v1/auth
 VITE_DEFAULT_TZ=Europe/Istanbul
 
+```
+
 ---
 
 ## ▶️ Getting Started
 
 # 1. Install dependencies
+
 npm install
 
 # 2. Start development server
+
 npm run dev
+
 # → http://localhost:5173
 
 # 3. Build for production
+
 npm run build
 
 # 4. Preview production build
+
 npm run preview
 
 ---
 
 ## 📂 Project Structure
+
+```
 /src
   /app          # Providers, router, global styles
   /pages        # Route components (public + admin)
@@ -107,6 +116,7 @@ npm run preview
   /utils        # Helpers (currency, dates, overlap checks)
   /assets       # Images, icons, fonts
   main.jsx
+```
 
 ---
 
@@ -130,4 +140,3 @@ This project is licensed under the MIT License
 
 This project was initially inspired by coursework from Jonas Schmedtmann.
 Most of the design, functionality, and further development were implemented by Onur Yılmaz.
-```
