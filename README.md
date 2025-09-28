@@ -37,8 +37,6 @@ Includes both the **public website** for guests and the **admin dashboard** for 
 
 ## 🖼️ Screenshots
 
-> Place screenshots in a `/screenshots` folder in the repo root.
-
 ### Public Website
 
 | Home                                | Bungalow Detail                         | Booking Flow                              |
