@@ -1,128 +1,135 @@
-Forest Bungalow Booking — Frontend
+# 🌲 Forest Bungalow Booking — Frontend
 
-A modern React + Vite single-page application (SPA) for managing bungalow/hotel bookings. It includes both the public website for guests and the admin dashboard for managers and staff.
+[![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=yellow)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-🚀 Features
+A modern **React + Vite** single-page application (SPA) for managing bungalow/hotel bookings.  
+Includes both the **public website** for guests and the **admin dashboard** for managers and staff.
 
-Public site
+---
 
-Browse available bungalows
+## 🚀 Features
 
-View details and images
+### 🌍 Public Website
 
-Create bookings with date/guest selection
+- Browse available bungalows
+- View details and images
+- Create bookings with date/guest selection
+- Confirmation screen
 
-Confirmation screen
+### 🔑 Admin Dashboard
 
-Admin dashboard
+- Role-based access: `receptionist`, `manager`, `admin`, `superAdmin`
+- Booking management: list, filter, update, checkout
+- Calendar view of reservations (React Big Calendar)
+- Cabin and guest CRUD
+- Settings for nightly prices, breakfast, min/max nights
 
-Authentication with role-based access (receptionist, manager, admin, superAdmin)
+### 🎨 UI/UX
 
-Booking management: list, filter, update, checkout
+- Responsive design with **styled-components**
+- Mobile-first with safe-area support
+- Custom hooks for media queries, outside click, iOS tap fixes
+- Toast notifications with **react-hot-toast**
 
-Calendar view of reservations (React Big Calendar)
+---
 
-Cabin and guest CRUD
+## 🖼️ Screenshots
 
-Settings for nightly prices, breakfast, min/max nights
+> Place screenshots in a `/screenshots` folder in the repo root.
 
-UI/UX
+### Public Website
 
-Responsive design with styled-components
+| Home                                | Bungalow Detail                         | Booking Flow                              |
+| ----------------------------------- | --------------------------------------- | ----------------------------------------- |
+| ![Home](./screenshots/web-home.png) | ![Detail](./screenshots/web-detail.png) | ![Booking](./screenshots/web-booking.png) |
 
-Mobile-first layout with safe-area support
+### Admin Panel
 
-Custom hooks for media queries, outside click, iOS tap fixes
+| Dashboard                                       | Bookings                                      | Calendar                                      |
+| ----------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| ![Dashboard](./screenshots/admin-dashboard.png) | ![Bookings](./screenshots/admin-bookings.png) | ![Calendar](./screenshots/admin-calendar.png) |
 
-Toast notifications (react-hot-toast)
+### 🎥 Demo GIFs
 
-🖼️ Screenshots & Demo
-Public Website
-Home Page ![HOME](./screenshots/web-home.png)
-Bungalow Detail ![BUNGALOW](./screenshots/web-detail.png)
-Booking Flow ![BOOKING](./screenshots/web-booking.png)
+- Public Booking Flow  
+  ![Demo Booking](./screenshots/demo-booking.gif)
 
-Admin Panel
-Dashboard ![DASHBOARD](./screenshots/admin-dashboard.png)
-Bookings ![ADMINBOOKING](./screenshots/admin-bookings.png)
-Calendar ![CALENDAR](./screenshots/admin-calendar.png)
+- Admin Booking Management  
+  ![Demo Admin](./screenshots/demo-admin.gif)
 
-🛠️ Tech Stack
+---
 
-React 18 + Vite
+## 🛠️ Tech Stack
 
-React Router
+- ⚛️ React 18 + Vite
+- 🧭 React Router
+- 💅 Styled-Components
+- 🔄 @tanstack/react-query
+- 📝 React Hook Form
+- 📅 React Datepicker & React Select
+- 📆 React Big Calendar
+- 🔔 react-hot-toast
 
-Styled-Components
+---
 
-@tanstack/react-query for data fetching/caching
+## ⚙️ Environment Variables
 
-React Hook Form for forms + validation
+Create a `.env` file in the project root (all must be prefixed with `VITE_`):
 
-React Datepicker & React Select for inputs
-
-React Big Calendar for availability view
-
-react-hot-toast for notifications
-
-⚙️ Environment Variables
-
-Create a .env file in the project root.
-Variables must be prefixed with VITE\_:
-
+```bash
 VITE_APP_NAME=Forest Bungalow
 VITE_API_URL=http://localhost:4001/api/v1
 VITE_AUTH_URL=http://localhost:4001/api/v1/auth
 VITE_DEFAULT_TZ=Europe/Istanbul
 
+
 ▶️ Getting Started
 
 # 1. Install dependencies
-
 npm install
 
 # 2. Start development server
-
 npm run dev
-
 # → http://localhost:5173
 
 # 3. Build for production
-
 npm run build
 
 # 4. Preview production build
-
 npm run preview
+
 
 📂 Project Structure
 /src
-/app # Providers, router, global styles
-/pages # Route components (public + admin)
-/components # Shared UI components
-/features # Domain features: bookings, cabins, guests, settings
-/hooks # Custom hooks (useMediaQuery, useOutsideClick, useTap, etc.)
-/services # API clients, query keys
-/styles # GlobalStyles, theme, breakpoints
-/utils # Helpers (currency, dates, overlap checks)
-/assets # Images, icons, fonts
-main.jsx
+  /app          # Providers, router, global styles
+  /pages        # Route components (public + admin)
+  /components   # Shared UI components
+  /features     # Domain features: bookings, cabins, guests, settings
+  /hooks        # Custom hooks (useMediaQuery, useOutsideClick, useTap, etc.)
+  /services     # API clients, query keys
+  /styles       # GlobalStyles, theme, breakpoints
+  /utils        # Helpers (currency, dates, overlap checks)
+  /assets       # Images, icons, fonts
+  main.jsx
+
 
 📦 Build & Deploy
 
-Production build is output to /dist
+Production build is generated in /dist
 
-Serve behind Caddy/Nginx or on static hosts like Netlify or Vercel
+Serve behind Caddy/Nginx or deploy to static hosts like Netlify or Vercel
 
-Ensure VITE_API_URL points to your backend API (e.g. https://api.bungalow.yourdomain.com)
+Ensure VITE_API_URL points to your live backend API (e.g. https://api.bungalow.yourdomain.com)
 
 📜 License
 
-MIT (or your chosen license)
-
-📌 Credits / Acknowledgements
-
-This project was initially inspired by coursework from Jonas Schmedtmann
+This project is licensed under the MIT License
 .
-Some starter JSX structures were adapted from his training materials.
-The majority of the design, functionality, and further development were implemented by Onur Yılmaz.
+
+📌 Credits
+
+This project was initially inspired by coursework from Jonas Schmedtmann.
+Most of the design, functionality, and further development were implemented by Onur Yılmaz.
+```
