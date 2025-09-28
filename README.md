@@ -82,6 +82,8 @@ VITE_DEFAULT_TZ=Europe/Istanbul
 
 ## ▶️ Getting Started
 
+```
+
 # 1. Install dependencies
 
 npm install
@@ -99,6 +101,8 @@ npm run build
 # 4. Preview production build
 
 npm run preview
+
+```
 
 ---
 
