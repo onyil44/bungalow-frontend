@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Spinner from './Spinner';
 import { device } from '../styles/bereakingPoints';
+import { ENV } from '../../config/env';
 
 const CarouselImageContainer = styled.div`
   flex: 0 0 50%;
@@ -30,7 +31,7 @@ function CarouselImage({ image }) {
       {!isLoaded && <Spinner />}
 
       <StyledCarouselImage
-        src={process.env.APP_URL + 'data' + image}
+        src={ENV.APP_URL + 'data' + image}
         alt={image}
         onLoad={() => setIsLoaded(true)}
       />

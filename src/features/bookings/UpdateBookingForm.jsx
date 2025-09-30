@@ -91,11 +91,7 @@ function UpdateBookingForm({ bookingToUpdate, onCloseModal }) {
   const disabledDates =
     cabinOccupaidDaysFromOtherBookings
       ?.flatMap((cod) =>
-        daysNotAvaliableInTimeZone(
-          cod.startDateUtc,
-          cod.numNights,
-          process.env.TZ,
-        ),
+        daysNotAvaliableInTimeZone(cod.startDateUtc, cod.numNights, ENV.TZ),
       )
       .map((date) => new Date(date)) || [];
   const numOfGuestsArray = createNumGuestArray(cabin);

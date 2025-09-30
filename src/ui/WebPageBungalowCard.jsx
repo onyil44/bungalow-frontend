@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Spinner from './Spinner.jsx';
 import { device } from '../styles/bereakingPoints.js';
+import { ENV } from '../../config/env.js';
 
 const StyledWebPageBungalowCard = styled.div`
   background-color: var(--color-background);
@@ -152,7 +153,7 @@ function WebPageBungalowCard({ bungalow, ref }) {
           {!isImgLoaded && <Spinner />}
 
           <Img
-            src={process.env.APP_URL + 'data' + bungalow.image}
+            src={ENV.APP_URL + 'data' + bungalow.image}
             alt={bungalow.name}
             onLoad={() => setIsImgLoaded(true)}
             style={{ display: isImgLoaded ? 'block' : 'none' }}

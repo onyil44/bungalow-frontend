@@ -8,6 +8,7 @@ import SpinnerFull from './SpinnerFull';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { setDarkMode } from '../features/themes/themeSlice';
+import { ENV } from '../../config/env';
 
 const StyledAppLayout = styled.div`
   position: fixed;
@@ -34,7 +35,7 @@ const Main = styled.main`
   overflow: auto;
   min-width: 0;
   min-height: 0;
-  scroll-padding-top: ${import.meta.env.VITE_TOP_H}rem;
+  scroll-padding-top: ${ENV.VITE_TOP_H}rem;
 
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -42,7 +43,7 @@ const Main = styled.main`
   @media ${device.tabletS} {
     width: 100%;
     padding: 1rem 2rem;
-    padding-top: ${import.meta.env.VITE_TOP_H}rem;
+    padding-top: ${ENV.VITE_TOP_H}rem;
 
     overflow: auto;
   }

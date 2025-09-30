@@ -4,6 +4,7 @@ import { getDarkMode } from '../features/themes/themeSlice';
 import { device } from '../styles/bereakingPoints';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { matchPath, useLocation } from 'react-router';
+import { ENV } from '../../config/env';
 
 const StyledLogo = styled.div`
   text-align: center;
@@ -72,11 +73,7 @@ function Logo({ type = 'app', $variation, onClick }) {
 
   return (
     <StyledLogo $variation={$variation} onClick={onClick}>
-      <Img
-        $type={type}
-        src={process.env.APP_URL + 'data/public' + imgSrc}
-        alt="Logo"
-      />
+      <Img $type={type} src={ENV.APP_URL + 'data/public' + imgSrc} alt="Logo" />
     </StyledLogo>
   );
 }

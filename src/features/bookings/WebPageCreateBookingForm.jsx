@@ -105,7 +105,7 @@ function WebPageCreateBookingForm() {
           pickedStart,
           pickedEnd,
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
           cabinOccupaidDays,
         )
       : false;

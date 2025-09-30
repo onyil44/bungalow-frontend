@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useCurrentUser } from './useCurrentUser';
 import { device } from '../../styles/bereakingPoints';
+import { ENV } from '../../../config/env';
 
 const StyledUserAvatar = styled.div`
   display: flex;
@@ -49,8 +50,8 @@ function UserAvatar() {
   const { user } = useCurrentUser();
 
   const avatarSrc = user?.avatar
-    ? process.env.APP_URL + 'data' + user.avatar
-    : process.env.APP_URL + 'data/public' + '/default-user.jpg';
+    ? ENV.APP_URL + 'data' + user.avatar
+    : ENV.APP_URL + 'data/public' + '/default-user.jpg';
 
   return (
     <StyledUserAvatar>

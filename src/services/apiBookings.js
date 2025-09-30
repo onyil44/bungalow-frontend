@@ -1,5 +1,6 @@
 import axios from './axiosCRUDServer';
 import { getTodayUtc, getUserTimeZone } from '../utils/time';
+import { ENV } from '../../config/env';
 
 export const getBookings = async function (filter, sort, page, limit) {
   try {
@@ -158,7 +159,7 @@ export async function getStaysTodayActivity() {
   try {
     const { data } = await axios({
       method: 'GET',
-      url: `bookings?filter={"$or":[{"status":"unconfirmed","startDateUtc":{"$gte":"${getTodayUtc(process.env.TZ).toISOString()}","$lte":"${getTodayUtc(process.env.TZ, true).toISOString()}"}},{"status":"checked-in","endDateUtc":{"$gte":"${getTodayUtc(process.env.TZ).toISOString()}","$lte":"${getTodayUtc(process.env.TZ, true).toISOString()}"}}]}&populate=guestId:fullName`,
+      url: `bookings?filter={"$or":[{"status":"unconfirmed","startDateUtc":{"$gte":"${getTodayUtc(ENV.TZ).toISOString()}","$lte":"${getTodayUtc(ENV.TZ, true).toISOString()}"}},{"status":"checked-in","endDateUtc":{"$gte":"${getTodayUtc(ENV.TZ).toISOString()}","$lte":"${getTodayUtc(ENV.TZ, true).toISOString()}"}}]}&populate=guestId:fullName`,
     });
     return data.data.docs;
   } catch (err) {

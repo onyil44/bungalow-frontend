@@ -7,6 +7,7 @@ import Button from '../ui/Button.jsx';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { HiMiniBars3, HiXMark } from 'react-icons/hi2';
 import { useNavigate } from 'react-router';
+import { ENV } from '../../config/env.js';
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -23,7 +24,7 @@ const StyledHeader = styled.header`
     z-index: 1000;
 
     /* Vite env + safe-area dahil yükseklik */
-    height: ${import.meta.env.VITE_TOP_H}rem;
+    height: ${ENV.VITE_TOP_H}rem;
 
     /* Yalnızca yatay ve üst güvenli alan dolgusunu bırak */
     padding: 0 max(16px, env(safe-area-inset-left)) 0

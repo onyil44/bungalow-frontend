@@ -15,6 +15,7 @@ import { device } from '../../styles/bereakingPoints';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { getUserTimeZone, userPickToHotelUtcMidnight } from '../../utils/time';
 import { useCabinOccupaidDaysForGuests } from '../bookings/useCabinOccupaidDaysForGuests';
+import { ENV } from '../../../config/env';
 
 const StyledWebPageSearchBungalowItem = styled.li`
   border-radius: var(--border-radius-sm);
@@ -186,7 +187,7 @@ function WebPageSearchBungalowItem({
           pickedStart,
           pickedEnd,
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
           cabinOccupaidDays,
         )
       : false;
@@ -212,7 +213,7 @@ function WebPageSearchBungalowItem({
           startDateUtc: userPickToHotelUtcMidnight(
             new Date(pickedStart),
             getUserTimeZone(),
-            process.env.TZ,
+            ENV.TZ,
           ).toISOString(),
           numNights: dayCount,
           hasBreakfast,
@@ -234,7 +235,7 @@ function WebPageSearchBungalowItem({
             </ImgButton>
           )}
           <Img
-            src={process.env.APP_URL + 'data' + cabin?.image}
+            src={ENV.APP_URL + 'data' + cabin?.image}
             alt={cabin?.name}
             onLoad={() => setIsImgLoaded(true)}
             style={{ display: isImgLoaded ? 'block' : 'none' }}

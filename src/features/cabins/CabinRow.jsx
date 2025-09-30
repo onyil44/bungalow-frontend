@@ -19,6 +19,7 @@ import Menus from '../../ui/Menus.jsx';
 import { useNavigate } from 'react-router';
 import { useMediaQuery } from '../../hooks/useMediaQuery.js';
 import { device } from '../../styles/bereakingPoints.js';
+import { ENV } from '../../../config/env.js';
 
 const Img = styled.img`
   display: block;
@@ -71,7 +72,7 @@ function CabinRow({ cabin }) {
   return (
     <>
       <Table.Row>
-        <Img src={process.env.APP_URL + 'data' + image} />
+        <Img src={ENV.APP_URL + 'data' + image} />
         <Cabin>{name}</Cabin>
         <div>Fits up to {maxCapacity} guests</div>
         {isMobileLorSmaller ? null : (

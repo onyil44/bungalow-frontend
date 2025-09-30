@@ -25,8 +25,9 @@ import { useCreateBooking } from './useCreateBooking';
 import { useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import { getUserTimeZone } from '../../utils/time';
+import { ENV } from '../../../config/env';
 
-const TZ = process.env.TZ || 'Europe/Istanbul';
+const TZ = ENV.TZ || 'Europe/Istanbul';
 
 function CreateNewBokingForm({ bungalow, bookingData, onCloseModal }) {
   const { settings, isPending: isSettingsLoading } = useSettings();

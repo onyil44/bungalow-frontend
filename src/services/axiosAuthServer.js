@@ -1,9 +1,10 @@
 import axios from 'axios';
 import store from '../store';
 import { refreshTokenOnce } from './refreshTokenOnce';
+import { ENV } from '../../config/env';
 
 const axiosInstance = axios.create({
-  baseURL: `${process.env.API_AUTH_URL + process.env.API_VER}`,
+  baseURL: `${ENV.API_AUTH_URL + ENV.API_VER}`,
   withCredentials: true,
 });
 

@@ -1,7 +1,8 @@
 // utils/tz.ts
 import { formatInTimeZone, fromZonedTime } from 'date-fns-tz';
+import { ENV } from '../../config/env';
 
-export const TZ = process.env.TZ || 'Europe/Istanbul';
+export const TZ = ENV.TZ || 'Europe/Istanbul';
 
 export function ymdTR(dateLike) {
   return formatInTimeZone(new Date(dateLike), TZ, 'yyyy-MM-dd');

@@ -13,6 +13,7 @@ import BungalowSelect from '../../ui/BungalowSelect';
 import { useLocation } from 'react-router';
 import { fromUnixTime } from 'date-fns';
 import { getUserTimeZone, userPickToHotelUtcMidnight } from '../../utils/time';
+import { ENV } from '../../../config/env';
 
 function BookingSearchOperations() {
   const isTabletSorSmaller = useMediaQuery(device.tabletS);
@@ -81,7 +82,7 @@ function BookingSearchOperations() {
           userPickToHotelUtcMidnight(
             data.startDate,
             getUserTimeZone(),
-            process.env.TZ,
+            ENV.TZ,
           ).getTime(),
         )
       : deleteURLParams('startDateUtc[gte]');
@@ -92,7 +93,7 @@ function BookingSearchOperations() {
           userPickToHotelUtcMidnight(
             data.endDate,
             getUserTimeZone(),
-            process.env.TZ,
+            ENV.TZ,
           ).getTime(),
         )
       : deleteURLParams('endDateUtc[lte]');

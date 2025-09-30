@@ -22,6 +22,7 @@ import { fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import BungalowSelect from '../../ui/BungalowSelect.jsx';
 import { daysNotAvaliableInTimeZone } from '../../utils/time.js';
+import { ENV } from '../../../config/env.js';
 
 function NewBookingSearchOperations() {
   const { search } = useLocation();
@@ -103,8 +104,8 @@ function NewBookingSearchOperations() {
       ? isUserRangeOverlapping(
           startDate,
           endDate,
-          process.env.TZ,
-          process.env.TZ,
+          ENV.TZ,
+          ENV.TZ,
           cabinOccupaidDays,
         )
       : false;
@@ -150,11 +151,7 @@ function NewBookingSearchOperations() {
   const disabledDates =
     cabinOccupaidDays
       ?.flatMap((cod) =>
-        daysNotAvaliableInTimeZone(
-          cod.startDateUtc,
-          cod.numNights,
-          process.env.TZ,
-        ),
+        daysNotAvaliableInTimeZone(cod.startDateUtc, cod.numNights, ENV.TZ),
       )
       .map((date) => new Date(date)) || [];
 

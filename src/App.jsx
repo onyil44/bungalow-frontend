@@ -61,7 +61,6 @@ function App() {
       <Bootstrapper />
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <GlobalStyles />
         <ThemeEffect />
         <DatePickerStyles />
         <ReactBigCalenderStyles />

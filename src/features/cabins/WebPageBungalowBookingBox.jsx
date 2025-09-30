@@ -140,7 +140,7 @@ function WebPageBungalowBookingBox({ bungalow, setting }) {
           pickedStart,
           pickedEnd,
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
           cabinOccupaidDays,
         )
       : false;
@@ -205,7 +205,7 @@ function WebPageBungalowBookingBox({ bungalow, setting }) {
         startDateUtc: userPickToHotelUtcMidnight(
           data.pickedStart,
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
         ).toISOString(),
         numNights: dayCount,
         hasBreakfast: data.hasBreakfast,

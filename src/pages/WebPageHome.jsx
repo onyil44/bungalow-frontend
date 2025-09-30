@@ -4,10 +4,10 @@ import WebPageSearchBungalowHomePage from '../features/cabins/WebPageSearchBunga
 import WebPageSearchBookingForm from '../features/bookings/WebPageSearchBookingForm ';
 import Tabs from '../ui/Tabs';
 import { device } from '../styles/bereakingPoints';
+import { ENV } from '../../config/env';
 
 const StyledAboutSection = styled.section`
-  background-image: url(${import.meta.env
-    .VITE_APP_URL}data/imgs/homepage_1.jpg);
+  background-image: url(${ENV.APP_URL}data/imgs/homepage_1.jpg);
   background-size: 100%;
   background-position: center;
   border-radius: 3px;
@@ -16,8 +16,7 @@ const StyledAboutSection = styled.section`
   align-items: stretch;
 
   @media ${device.tablet} {
-    background-image: url(${import.meta.env
-      .VITE_APP_URL}data/imgs/homepage_1_vertical.jpg);
+    background-image: url(${ENV.APP_URL}data/imgs/homepage_1_vertical.jpg);
     background-position: center;
   }
 `;

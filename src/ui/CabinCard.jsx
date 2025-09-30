@@ -19,6 +19,7 @@ import { useCabinOccupaidDays } from '../features/bookings/useCabinOccupaidDays'
 import Modal from './Modal';
 import CreateNewBokingForm from '../features/bookings/CreateNewBokingForm';
 import { getUserTimeZone } from '../utils/time';
+import { ENV } from '../../config/env';
 
 const StyledCabinCard = styled.div`
   background-color: var(--color-background);
@@ -166,7 +167,7 @@ function CabinCard({ bungalow }) {
           startDate,
           endDate,
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
           bungalowOccupaidDays,
         )
       : false;
@@ -196,7 +197,7 @@ function CabinCard({ bungalow }) {
       <CardHeader>
         <HeaderImgContainer>
           <Img
-            src={process.env.APP_URL + 'data' + bungalow.image}
+            src={ENV.APP_URL + 'data' + bungalow.image}
             alt={bungalow.name}
           />
         </HeaderImgContainer>

@@ -3,6 +3,7 @@ import { useURL } from '../../hooks/useURL';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getBookingsAfterDate } from '../../services/apiBookings';
 import { getTodayUtc, getUserTimeZone } from '../../utils/time';
+import { ENV } from '../../../config/env';
 
 export function useRecentBookings() {
   const queryClient = useQueryClient();
@@ -23,7 +24,7 @@ export function useRecentBookings() {
     queryFn: () => getBookingsAfterDate(queryDate),
   });
 
-  process.env.DASHBOARD_DAYS_ARR.split(',')
+  ENV.DASHBOARD_DAYS_ARR.split(',')
     .map((arrDay) => Number(arrDay))
     .filter((arrDay) => arrDay !== numDays)
     .forEach((arrDay) => {

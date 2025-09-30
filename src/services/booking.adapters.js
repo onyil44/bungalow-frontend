@@ -1,5 +1,6 @@
 import { addDays, differenceInDays } from 'date-fns';
 import { formatInTimeZone, fromZonedTime } from 'date-fns-tz';
+import { ENV } from '../../config/env';
 
 export function serverToVM(b, userTZ) {
   const startUtc = new Date(b.startDateUtc); // gerçek UTC anı
@@ -19,7 +20,7 @@ export function serverToVM(b, userTZ) {
 }
 
 export function vmCreateToServer(newBooking) {
-  const { pickedStart, pickedEnd, hotelTimeZone = process.env.TZ } = newBooking;
+  const { pickedStart, pickedEnd, hotelTimeZone = ENV.TZ } = newBooking;
 
   const startYmdHotel = formatInTimeZone(
     pickedStart,

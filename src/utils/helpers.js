@@ -8,6 +8,7 @@ import {
 import { trMidnightUtc } from './tz-helpers';
 import { getUserTimeZone, userPickToHotelUtcMidnight } from './time';
 import { anyOverlapUtc } from './time-overlap';
+import { ENV } from '../../config/env';
 
 export const subtractDates = (dateStr1, dateStr2) =>
   differenceInDays(parseISO(String(dateStr1)), parseISO(String(dateStr2)));
@@ -100,12 +101,12 @@ export function calculateDayCount(pickedStart, pickedEnd) {
         userPickToHotelUtcMidnight(
           new Date(pickedEnd),
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
         ),
         userPickToHotelUtcMidnight(
           new Date(pickedStart),
           getUserTimeZone(),
-          process.env.TZ,
+          ENV.TZ,
         ),
       )
     : null;

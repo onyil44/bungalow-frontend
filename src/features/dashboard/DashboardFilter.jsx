@@ -1,7 +1,8 @@
+import { ENV } from '../../../config/env';
 import Filter from '../../ui/Filter';
 
 function DashboardFilter() {
-  const filterOptions = process.env.DASHBOARD_DAYS_ARR.split(',').map((day) => {
+  const filterOptions = ENV.DASHBOARD_DAYS_ARR.split(',').map((day) => {
     return { value: day, label: `Last ${day} days` };
   });
 
